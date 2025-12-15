@@ -20,7 +20,7 @@ n_ISI = 50;         % # neuron sampled for ISI distribution
 
 % fig7
 conn_pct = 0.17;    % sparsity
-wff = 10;
+wff = 13.8;
 fname = 'fig7/data.mat';
 
 if ~exist('fig7','dir'); mkdir('fig7'); end
