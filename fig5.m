@@ -18,8 +18,8 @@ tbin = 0.1;     % time bin in ms
 % params for multiple wff simulation
 wff = 10;
 
-if ~exist('fig5','dir'); mkdir(path); end
-if ~exist('fig5_simplified','dir'); mkdir(path); end
+if ~exist('fig5','dir'); mkdir('fig5'); end
+if ~exist('fig5_simplified','dir'); mkdir('fig5_simplified'); end
 
 %% Gillespie (very slow, and the output data is very big, so saving X as binary)
 

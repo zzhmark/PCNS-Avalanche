@@ -23,7 +23,7 @@ conn_pct = 0.17;    % sparsity
 wff = 10;
 fname = 'fig7/data.mat';
 
-if ~exist('fig7','dir'); mkdir(path); end
+if ~exist('fig7','dir'); mkdir('fig7'); end
 
 %% Init
 [MD,~] = qr(randn(N));   % orthogonal

@@ -23,7 +23,7 @@ wff_start = 0.8;
 wff_end = 6.4;
 tbin = 1;     % time bin in ms
 
-if ~exist('fig4','dir'); mkdir(path); end
+if ~exist('fig4','dir'); mkdir('fig4'); end
 
 %% Gillespie in parallel!
 wff = wff_start:wff_step:wff_end;
@@ -88,14 +88,11 @@ for k = 1:numel(files)
     D(D < 0) = 0;           % remove negatives
     event = [zeros(1,N); D];        % prepend first row
     [Tb, nspk] = timebin_sum(T, event, tbin);
-    kt = sum(nspk, 2);
-    cv(k) = std(kt) / mean(kt);
-    fr = nspk / tbin * 1000;    % in Hz
-    fr = gauss_smooth_1d(fr, sigma / tbin);
-    fr = mean(fr, 2);
+    kt = mean(nspk, 2);
 
-    mfr(k) = mean(fr);
-    sfr(k) = std(fr);
+    cv(k) = std(kt) / mean(kt);
+    mfr(k) = mean(kt) / tbin * 1000;
+    sfr(k) = std(kt) / tbin * 1000;
 end
 
 %% Plot Figure 4A, mean & std of firing rate

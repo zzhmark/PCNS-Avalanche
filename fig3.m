@@ -17,7 +17,7 @@ ttot = 1000;    % total simulation time in ms
 x_min = 10;     % power law fit parameter
 n_ISI = 50;         % # neuron sampled for ISI distribution
 
-if ~exist('fig3','dir'); mkdir(path); end
+if ~exist('fig3','dir'); mkdir('fig3'); end
 
 %% ========================================= Simulation for wE + wI = 0.8
 w_tot = 0.8;
